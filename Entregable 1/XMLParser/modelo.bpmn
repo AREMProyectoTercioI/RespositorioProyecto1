@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bonitaConnector="http://www.bonitasoft.org/studio/connector/definition/6.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:model="http://www.omg.org/spec/BPMN/20100524/MODEL" xsi:schemaLocation="schemaLocation http://www.omg.org/spec/BPMN/20100524/MODEL schemas/BPMN20.xsd" exporter="BonitaSoft" exporterVersion="7.6.2" expressionLanguage="http://groovy.apache.org/" targetNamespace="http://bonitasoft.com/_Jv6lIBE9EeiU87L1PQ_5sA">
+  <model:collaboration id="_Jv6lIBE9EeiU87L1PQ_5sA">
+    <model:participant id="_JPvv8BFAEeiqle_sYPDjWg" name="AfiliacionesPC" processRef="_Jv6lIRE9EeiU87L1PQ_5sA"/>
+    <model:participant id="_Jv6mFxE9EeiU87L1PQ_5sA" name="Employee actor">
+      <model:documentation>This is an example of actor that is mapped to any ACME users</model:documentation>
+    </model:participant>
+    <model:participant id="_Jv6mGBE9EeiU87L1PQ_5sA" name="Agente Contact Center"/>
+  </model:collaboration>
+  <model:process id="_Jv6lIRE9EeiU87L1PQ_5sA" name="AfiliacionesPC">
+    <model:documentation>Es el proceso de afiliaciones de pensiones y cesantias, teniendo en cuenta desde que el usuario llena los datos hasta cuando le realizan todas las verificaciones necesarias para responder a su solicitud.</model:documentation>
+    <model:ioSpecification id="_JQaeURFAEeiqle_sYPDjWg">
+      <model:dataInput id="_JQbFYBFAEeiqle_sYPDjWg" itemSubjectRef="_Jv6l0RE9EeiU87L1PQ_5sA"/>
+      <model:dataInput id="_JQdhohFAEeiqle_sYPDjWg" itemSubjectRef="_Jv6l0xE9EeiU87L1PQ_5sA"/>
+      <model:inputSet id="_JQbFYRFAEeiqle_sYPDjWg">
+        <model:dataInputRefs>_JQbFYBFAEeiqle_sYPDjWg</model:dataInputRefs>
+      </model:inputSet>
+      <model:inputSet id="_JQdhoxFAEeiqle_sYPDjWg">
+        <model:dataInputRefs>_JQdhohFAEeiqle_sYPDjWg</model:dataInputRefs>
+      </model:inputSet>
+      <model:outputSet id="_JQeIsBFAEeiqle_sYPDjWg"/>
+    </model:ioSpecification>
+    <model:laneSet id="AfiliacionesPC_laneSet">
+      <model:lane id="_Jv6lIhE9EeiU87L1PQ_5sA" name="Asesor Comercial">
+        <model:documentation>El asesor comercial es la persona que se encarga de crear un &quot;puente&quot; o enlace entre el cliente y la empresa, en este caso la empresa de pensiones y cesantias</model:documentation>
+        <model:flowNodeRef>_Jv6lIxE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lKBE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lLRE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lMhE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lPBE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lRhE9EeiU87L1PQ_5sA</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="_Jv6lUBE9EeiU87L1PQ_5sA" name="Agente Contact Center">
+        <model:documentation>El agente del Contact Center es la persona encargada de revisar los datos de las solicitudes de afiliaciones en el sistema SystPen</model:documentation>
+        <model:flowNodeRef>_Jv6lURE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lVhE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6laBE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lchE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6ldxE9EeiU87L1PQ_5sA</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="_Jv6liRE9EeiU87L1PQ_5sA" name="Área de afiliaciones">
+        <model:documentation>El area de afiliaciones es el sector de la empresa que se encarga de digitalizar y estandarizar las solicitudes de los clientes.</model:documentation>
+        <model:flowNodeRef>_Jv6lihE9EeiU87L1PQ_5sA</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="_Jv6lnBE9EeiU87L1PQ_5sA" name="Área Lavado de activos">
+        <model:documentation>El area de lavado de activos es la encargada de revisar en las bases de datos mundiales que el usuario que este realizando la solicitud actual no presente reportes.</model:documentation>
+        <model:flowNodeRef>_Jv6lnRE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lpxE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lrBE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lthE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6luxE9EeiU87L1PQ_5sA</model:flowNodeRef>
+        <model:flowNodeRef>_Jv6lxRE9EeiU87L1PQ_5sA</model:flowNodeRef>
+      </model:lane>
+    </model:laneSet>
+    <model:dataObject id="DataObject_JQaeUBFAEeiqle_sYPDjWg_Jv6l0RE9EeiU87L1PQ_5sA" name="sdfsfd" isCollection="false" itemSubjectRef="_Jv6l0RE9EeiU87L1PQ_5sA"/>
+    <model:dataObject id="DataObject_JQdhoRFAEeiqle_sYPDjWg_Jv6l0xE9EeiU87L1PQ_5sA" name="datosCliente" isCollection="false" itemSubjectRef="_Jv6l0xE9EeiU87L1PQ_5sA"/>
+    <model:startEvent id="_Jv6lIxE9EeiU87L1PQ_5sA" name="Start1">
+      <model:documentation>El usuario llena el formulario en el que indica informacion basica como identificacion, nombres, sexo y edad, ademas ingresa el tipo de afiliacion a la que va a aplicar (transferencia o nueva), despues de esto inicia el proceso.</model:documentation>
+    </model:startEvent>
+    <model:endEvent id="_Jv6lKBE9EeiU87L1PQ_5sA" name="Solicitud Rechazada">
+      <model:documentation>La validacion en el sistema SystPen lanzó excepciones</model:documentation>
+      <model:terminateEventDefinition id="_JQogwBFAEeiqle_sYPDjWg"/>
+    </model:endEvent>
+    <model:exclusiveGateway id="_Jv6lLRE9EeiU87L1PQ_5sA" name="¿Fue aceptado?">
+      <model:documentation>Chequea si la validacion del sistema fue correcta para poder proseguir</model:documentation>
+    </model:exclusiveGateway>
+    <model:task id="_Jv6lMhE9EeiU87L1PQ_5sA" name="Llenar planilla de afiliación">
+      <model:documentation>El asesor comercial procede a llenar una planilla de afiliacion en la que se ingresan datos demograficos como por ejemplo si tiene conyugue, hijos, fechas de nacimiento, informacion de fondos de pensiones voluntarias y obligatorias y cesantias.</model:documentation>
+    </model:task>
+    <model:task id="_Jv6lPBE9EeiU87L1PQ_5sA" name="Solicitar validación ">
+      <model:documentation>El asesor comercial llama al Contact Center para que realizen la verificacion en la plataforma Systpen.</model:documentation>
+    </model:task>
+    <model:task id="_Jv6lRhE9EeiU87L1PQ_5sA" name="Copiar planilla de afiliación">
+      <model:documentation>Despues de llenar la planilla de afiliacion se debe sacar copia de la planilla de afiliación</model:documentation>
+    </model:task>
+    <model:exclusiveGateway id="_Jv6lURE9EeiU87L1PQ_5sA" name="¿ Datos validos?">
+      <model:documentation>Chequea si los datos fueron correctos</model:documentation>
+    </model:exclusiveGateway>
+    <model:userTask id="_Jv6lVhE9EeiU87L1PQ_5sA" name="Validar datos de afiliacion y datos  demográficos">
+      <model:documentation>Un agente del Contact Center realiza la validacion de datos de afiliacion y demograficos para garantizar que el cliente sea apto para aplicar a la solicitud.</model:documentation>
+      <model:performer id="_JQxDoBFAEeiqle_sYPDjWg">
+        <model:resourceRef>_Jv6mGBE9EeiU87L1PQ_5sA</model:resourceRef>
+      </model:performer>
+    </model:userTask>
+    <model:boundaryEvent id="_Jv6lYBE9EeiU87L1PQ_5sA" name="Validación Retrazada" attachedToRef="_Jv6lVhE9EeiU87L1PQ_5sA" cancelActivity="false">
+      <model:timerEventDefinition id="eventdef-Validación Retrazada">
+        <model:timeCycle>259200000L</model:timeCycle>
+      </model:timerEventDefinition>
+    </model:boundaryEvent>
+    <model:serviceTask id="_Jv6laBE9EeiU87L1PQ_5sA" name="Informar demora">
+      <model:documentation>Informar demora</model:documentation>
+    </model:serviceTask>
+    <model:endEvent id="_Jv6lchE9EeiU87L1PQ_5sA" name="Solicitud Retrazada"/>
+    <model:userTask id="_Jv6ldxE9EeiU87L1PQ_5sA" name="Realiza validación">
+      <model:documentation>La plataforma SystPen revisa que esten a mas de 10 años de pensionarse y, si es una solicitud de traslado, que el numero de meses en el fondo actual sea mayor a 6</model:documentation>
+      <model:performer id="_JQ0G8hFAEeiqle_sYPDjWg">
+        <model:resourceRef>_Jv6mGBE9EeiU87L1PQ_5sA</model:resourceRef>
+      </model:performer>
+    </model:userTask>
+    <model:boundaryEvent id="_Jv6lgRE9EeiU87L1PQ_5sA" name="Validación Retrazada Sistpen" attachedToRef="_Jv6ldxE9EeiU87L1PQ_5sA" cancelActivity="false">
+      <model:timerEventDefinition id="eventdef-Validación Retrazada Sistpen">
+        <model:timeCycle>259200000L</model:timeCycle>
+      </model:timerEventDefinition>
+    </model:boundaryEvent>
+    <model:sendTask id="_Jv6lihE9EeiU87L1PQ_5sA" name="Enviar datos a el contratista">
+      <model:documentation>Se envia la planilla al contratista del area de afiliaciones para que la digitalize.</model:documentation>
+    </model:sendTask>
+    <model:serviceTask id="_Jv6lnRE9EeiU87L1PQ_5sA" name="Validación AML">
+      <model:documentation>Un agente del area de lavado de activos verifica que el usuario registrado no presente inconsistencias en la base de datos como por ejemplo reportes en tarjetas de credito o en black lists a nivel mundial</model:documentation>
+    </model:serviceTask>
+    <model:exclusiveGateway id="_Jv6lpxE9EeiU87L1PQ_5sA" name="¿ Fue aceptado ?" default="_Jv6l-RE9EeiU87L1PQ_5sA">
+      <model:documentation>Chequea si el usuario no presenta aquellos reportes</model:documentation>
+    </model:exclusiveGateway>
+    <model:serviceTask id="_Jv6lrBE9EeiU87L1PQ_5sA" name="Enviar notificación">
+      <model:documentation>Como presenta algun/os reportes en la base de datos se le informa al usuario que su solicitud ha sido rechazada por medio de un correo</model:documentation>
+    </model:serviceTask>
+    <model:endEvent id="_Jv6lthE9EeiU87L1PQ_5sA" name="Aceptado">
+      <model:documentation>Se acepta la solicitud del cliente</model:documentation>
+      <model:terminateEventDefinition id="_JQ3KQRFAEeiqle_sYPDjWg"/>
+    </model:endEvent>
+    <model:serviceTask id="_Jv6luxE9EeiU87L1PQ_5sA" name="Crear cuentas de productos">
+      <model:documentation>Como no presentas inconsistencias o problemas la identificacion asociada a la solicitud se procede a crear las cuentas de los productos solicitados por el suaurio</model:documentation>
+    </model:serviceTask>
+    <model:endEvent id="_Jv6lxRE9EeiU87L1PQ_5sA" name="Rechazado">
+      <model:documentation>Se rechaza la solicitud de afiliacion del cliente</model:documentation>
+      <model:terminateEventDefinition id="_JQ3KRBFAEeiqle_sYPDjWg"/>
+    </model:endEvent>
+    <model:sequenceFlow id="_Jv6l3hE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lIxE9EeiU87L1PQ_5sA" targetRef="_Jv6lPBE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6l4RE9EeiU87L1PQ_5sA" name="si" sourceRef="_Jv6lLRE9EeiU87L1PQ_5sA" targetRef="_Jv6lMhE9EeiU87L1PQ_5sA">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_JQ9Q4BFAEeiqle_sYPDjWg" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath">true</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_Jv6l5BE9EeiU87L1PQ_5sA" name="no" sourceRef="_Jv6lLRE9EeiU87L1PQ_5sA" targetRef="_Jv6lKBE9EeiU87L1PQ_5sA">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_JQ9Q4RFAEeiqle_sYPDjWg" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath">false</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_Jv6l5xE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lihE9EeiU87L1PQ_5sA" targetRef="_Jv6lVhE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6l6hE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lVhE9EeiU87L1PQ_5sA" targetRef="_Jv6lURE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6l7RE9EeiU87L1PQ_5sA" name="si" sourceRef="_Jv6lURE9EeiU87L1PQ_5sA" targetRef="_Jv6lnRE9EeiU87L1PQ_5sA">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_JQ938BFAEeiqle_sYPDjWg" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath">true</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_Jv6l8BE9EeiU87L1PQ_5sA" name="no" sourceRef="_Jv6lURE9EeiU87L1PQ_5sA" targetRef="_Jv6lMhE9EeiU87L1PQ_5sA">
+      <model:documentation>Si la validacion es incorrecta se repite el proceso de llenada de planilla de afiliacion</model:documentation>
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_JQ-fABFAEeiqle_sYPDjWg" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath">false</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_Jv6l8xE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lnRE9EeiU87L1PQ_5sA" targetRef="_Jv6lpxE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6l9hE9EeiU87L1PQ_5sA" name="si" sourceRef="_Jv6lpxE9EeiU87L1PQ_5sA" targetRef="_Jv6luxE9EeiU87L1PQ_5sA">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_JQ-fARFAEeiqle_sYPDjWg" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath">true</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_Jv6l-RE9EeiU87L1PQ_5sA" name="no" sourceRef="_Jv6lpxE9EeiU87L1PQ_5sA" targetRef="_Jv6lrBE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6l_BE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lrBE9EeiU87L1PQ_5sA" targetRef="_Jv6lxRE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6l_xE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6luxE9EeiU87L1PQ_5sA" targetRef="_Jv6lthE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6mAhE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lYBE9EeiU87L1PQ_5sA" targetRef="_Jv6laBE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6mBRE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6laBE9EeiU87L1PQ_5sA" targetRef="_Jv6lchE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6mCBE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lPBE9EeiU87L1PQ_5sA" targetRef="_Jv6ldxE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6mCxE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lgRE9EeiU87L1PQ_5sA" targetRef="_Jv6laBE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6mDhE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6ldxE9EeiU87L1PQ_5sA" targetRef="_Jv6lLRE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6mERE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lMhE9EeiU87L1PQ_5sA" targetRef="_Jv6lRhE9EeiU87L1PQ_5sA"/>
+    <model:sequenceFlow id="_Jv6mFBE9EeiU87L1PQ_5sA" name="" sourceRef="_Jv6lRhE9EeiU87L1PQ_5sA" targetRef="_Jv6lihE9EeiU87L1PQ_5sA"/>
+  </model:process>
+  <model:itemDefinition id="_Jv6l0RE9EeiU87L1PQ_5sA" structureRef="java:java.lang.String"/>
+  <model:itemDefinition id="_Jv6l0xE9EeiU87L1PQ_5sA" structureRef="java:java.lang.String"/>
+  <di:BPMNDiagram name="ProcesoActual">
+    <di:BPMNPlane id="plane__Jv6lIBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lIBE9EeiU87L1PQ_5sA">
+      <di:BPMNShape id="_Jv6mNBE9EeiU87L1PQ_5sA" bpmnElement="_JPvv8BFAEeiqle_sYPDjWg" isHorizontal="true">
+        <dc:Bounds height="1204.0" width="1759.0" x="0.0" y="0.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mNxE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lIhE9EeiU87L1PQ_5sA" isHorizontal="true">
+        <dc:Bounds height="351.0" width="1729.0" x="30.0" y="0.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mOhE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lIxE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="30.0" width="30.0" x="88.0" y="115.0"/>
+        <di:BPMNLabel id="_JQldcRFAEeiqle_sYPDjWg" labelStyle="_JQldcBFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="30.0" x="88.0" y="150.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mPhE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lKBE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="30.0" width="30.0" x="422.0" y="27.0"/>
+        <di:BPMNLabel id="_JQogwRFAEeiqle_sYPDjWg" labelStyle="_JQldcBFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="105.0" x="385.0" y="62.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mQhE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lLRE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="43.0" width="43.0" x="415.0" y="108.0"/>
+        <di:BPMNLabel id="_JQpu4BFAEeiqle_sYPDjWg" labelStyle="_JQldcBFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="81.0" x="396.0" y="156.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mRhE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lMhE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="77.0" width="154.0" x="625.0" y="108.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mSRE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lPBE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="80.0" width="160.0" x="170.0" y="108.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mTBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lRhE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="60.0" width="120.0" x="929.0" y="129.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mXxE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lUBE9EeiU87L1PQ_5sA" isHorizontal="true">
+        <dc:Bounds height="361.0" width="1729.0" x="30.0" y="351.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mYhE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lURE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="43.0" width="43.0" x="857.0" y="460.0"/>
+        <di:BPMNLabel id="_JQsLIBFAEeiqle_sYPDjWg" labelStyle="_JQldcBFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="83.0" x="837.0" y="508.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mZhE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lVhE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="70.0" width="140.0" x="92.0" y="407.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6maBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lYBE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="30.0" width="30.0" x="112.0" y="462.0"/>
+        <di:BPMNLabel id="_JQy40BFAEeiqle_sYPDjWg" labelStyle="_JQq9ARFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="109.0" x="73.0" y="497.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mbRE9EeiU87L1PQ_5sA" bpmnElement="_Jv6laBE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="50.0" width="100.0" x="256.0" y="597.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mcBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lchE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="30.0" width="30.0" x="462.0" y="559.0"/>
+        <di:BPMNLabel id="_JQ0G8RFAEeiqle_sYPDjWg" labelStyle="_JQq9ARFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="100.0" x="427.0" y="594.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mdBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6ldxE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="50.0" width="100.0" x="422.0" y="366.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mdhE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lgRE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="30.0" width="30.0" x="442.0" y="401.0"/>
+        <di:BPMNLabel id="_JQ0uABFAEeiqle_sYPDjWg" labelStyle="_JQq9ARFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="150.0" x="382.0" y="436.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mVBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6liRE9EeiU87L1PQ_5sA" isHorizontal="true">
+        <dc:Bounds height="207.0" width="1729.0" x="30.0" y="712.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mVxE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lihE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="70.0" width="140.0" x="111.0" y="823.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mgBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lnBE9EeiU87L1PQ_5sA" isHorizontal="true">
+        <dc:Bounds height="285.0" width="1729.0" x="30.0" y="919.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mgxE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lnRE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="50.0" width="100.0" x="1042.0" y="956.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mhhE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lpxE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="43.0" width="43.0" x="1270.0" y="959.0"/>
+        <di:BPMNLabel id="_JQ2jMRFAEeiqle_sYPDjWg" labelStyle="_JQq9ARFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="87.0" x="1248.0" y="1007.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mihE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lrBE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="60.0" width="120.0" x="1404.0" y="937.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mjRE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lthE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="30.0" width="30.0" x="1461.0" y="1089.0"/>
+        <di:BPMNLabel id="_JQ3KQhFAEeiqle_sYPDjWg" labelStyle="_JQq9ARFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="51.0" x="1451.0" y="1124.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mkRE9EeiU87L1PQ_5sA" bpmnElement="_Jv6luxE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="60.0" width="120.0" x="1214.0" y="1089.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Jv6mlBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6lxRE9EeiU87L1PQ_5sA">
+        <dc:Bounds height="30.0" width="30.0" x="1594.0" y="947.0"/>
+        <di:BPMNLabel id="_JQ3KRRFAEeiqle_sYPDjWg" labelStyle="_JQq9ARFAEeiqle_sYPDjWg">
+          <dc:Bounds height="15.0" width="57.0" x="1581.0" y="982.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_Jv6moxE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l3hE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="118.0" y="139.0"/>
+        <di_1:waypoint x="170.0" y="139.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6mqBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l4RE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="458.0" y="137.0"/>
+        <di_1:waypoint x="625.0" y="137.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6mrRE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l5BE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="436.0" y="108.0"/>
+        <di_1:waypoint x="436.0" y="57.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6mshE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l5xE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="171.0" y="823.0"/>
+        <di_1:waypoint x="171.0" y="477.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6mtxE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l6hE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="232.0" y="461.0"/>
+        <di_1:waypoint x="857.0" y="461.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6mvBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l7RE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="887.0" y="503.0"/>
+        <di_1:waypoint x="887.0" y="731.0"/>
+        <di_1:waypoint x="1081.0" y="731.0"/>
+        <di_1:waypoint x="1081.0" y="956.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6mwRE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l8BE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="857.0" y="498.0"/>
+        <di_1:waypoint x="707.0" y="498.0"/>
+        <di_1:waypoint x="707.0" y="185.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6myBE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l8xE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="1142.0" y="980.0"/>
+        <di_1:waypoint x="1270.0" y="980.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6mzRE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l9hE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="1282.0" y="1002.0"/>
+        <di_1:waypoint x="1282.0" y="1089.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m0hE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l-RE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="1313.0" y="973.0"/>
+        <di_1:waypoint x="1404.0" y="973.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m1xE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l_BE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="1524.0" y="964.0"/>
+        <di_1:waypoint x="1594.0" y="964.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m3BE9EeiU87L1PQ_5sA" bpmnElement="_Jv6l_xE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="1334.0" y="1111.0"/>
+        <di_1:waypoint x="1461.0" y="1111.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m4RE9EeiU87L1PQ_5sA" bpmnElement="_Jv6mAhE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="142.0" y="489.0"/>
+        <di_1:waypoint x="216.0" y="489.0"/>
+        <di_1:waypoint x="216.0" y="549.0"/>
+        <di_1:waypoint x="275.0" y="549.0"/>
+        <di_1:waypoint x="275.0" y="597.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m5hE9EeiU87L1PQ_5sA" bpmnElement="_Jv6mBRE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="356.0" y="598.0"/>
+        <di_1:waypoint x="391.0" y="598.0"/>
+        <di_1:waypoint x="391.0" y="578.0"/>
+        <di_1:waypoint x="462.0" y="578.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m6xE9EeiU87L1PQ_5sA" bpmnElement="_Jv6mCBE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="286.0" y="188.0"/>
+        <di_1:waypoint x="286.0" y="269.0"/>
+        <di_1:waypoint x="449.0" y="269.0"/>
+        <di_1:waypoint x="449.0" y="366.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m8BE9EeiU87L1PQ_5sA" bpmnElement="_Jv6mCxE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="445.0" y="431.0"/>
+        <di_1:waypoint x="445.0" y="518.0"/>
+        <di_1:waypoint x="323.0" y="518.0"/>
+        <di_1:waypoint x="323.0" y="597.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m9xE9EeiU87L1PQ_5sA" bpmnElement="_Jv6mDhE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="452.0" y="366.0"/>
+        <di_1:waypoint x="452.0" y="151.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6m_RE9EeiU87L1PQ_5sA" bpmnElement="_Jv6mERE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="779.0" y="152.0"/>
+        <di_1:waypoint x="929.0" y="152.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Jv6nAxE9EeiU87L1PQ_5sA" bpmnElement="_Jv6mFBE9EeiU87L1PQ_5sA">
+        <di_1:waypoint x="962.0" y="189.0"/>
+        <di_1:waypoint x="962.0" y="636.0"/>
+        <di_1:waypoint x="469.0" y="636.0"/>
+        <di_1:waypoint x="469.0" y="849.0"/>
+        <di_1:waypoint x="251.0" y="849.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+    <di:BPMNLabelStyle id="_JQldcBFAEeiqle_sYPDjWg">
+      <dc:Font isBold="false" isItalic="false" isStrikeThrough="false" isUnderline="false" name="Segoe UI" size="9.0"/>
+    </di:BPMNLabelStyle>
+    <di:BPMNLabelStyle id="_JQq9ARFAEeiqle_sYPDjWg">
+      <dc:Font isBold="false" isItalic="false" isStrikeThrough="false" isUnderline="false" name="Ubuntu" size="9.0"/>
+    </di:BPMNLabelStyle>
+  </di:BPMNDiagram>
+</model:definitions>

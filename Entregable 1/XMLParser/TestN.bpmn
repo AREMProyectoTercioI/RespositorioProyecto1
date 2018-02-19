@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bonitaConnector="http://www.bonitasoft.org/studio/connector/definition/6.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:model="http://www.omg.org/spec/BPMN/20100524/MODEL" xsi:schemaLocation="schemaLocation http://www.omg.org/spec/BPMN/20100524/MODEL schemas/BPMN20.xsd" exporter="BonitaSoft" exporterVersion="7.6.1" expressionLanguage="http://groovy.apache.org/" targetNamespace="http://bonitasoft.com/_jU5vUA-dEeiTUdwghqUZMQ">
+  <model:collaboration id="_jU5vUA-dEeiTUdwghqUZMQ">
+    <model:participant id="_Y1HSEBAeEeiSkal6PJCcVA" name="Testing" processRef="_jU5vUQ-dEeiTUdwghqUZMQ"/>
+    <model:participant id="_jU5viw-dEeiTUdwghqUZMQ" name="Employee actor">
+      <model:documentation>Este es un ejemplo de actor que está mapeado a cualquier usuario de la organización ACME</model:documentation>
+    </model:participant>
+  </model:collaboration>
+  <model:process id="_jU5vUQ-dEeiTUdwghqUZMQ" name="Testing">
+    <model:documentation>wecwcwc</model:documentation>
+    <model:ioSpecification id="_Y1H5IBAeEeiSkal6PJCcVA">
+      <model:inputSet id="_Y1H5IRAeEeiSkal6PJCcVA"/>
+      <model:outputSet id="_Y1H5IhAeEeiSkal6PJCcVA"/>
+    </model:ioSpecification>
+    <model:laneSet id="Testing_laneSet">
+      <model:lane id="_jU5vUg-dEeiTUdwghqUZMQ" name="Empleado (lane) ">
+        <model:flowNodeRef>_jU5vUw-dEeiTUdwghqUZMQ</model:flowNodeRef>
+        <model:flowNodeRef>_jU5vWA-dEeiTUdwghqUZMQ</model:flowNodeRef>
+        <model:flowNodeRef>_jU5vaA-dEeiTUdwghqUZMQ</model:flowNodeRef>
+        <model:flowNodeRef>_jU5vbQ-dEeiTUdwghqUZMQ</model:flowNodeRef>
+        <model:flowNodeRef>_6bwa4BAFEeiSkal6PJCcVA</model:flowNodeRef>
+        <model:flowNodeRef>_9mDMoBAFEeiSkal6PJCcVA</model:flowNodeRef>
+      </model:lane>
+    </model:laneSet>
+    <model:startEvent id="_jU5vUw-dEeiTUdwghqUZMQ" name="Inicio1">
+      <model:documentation>Operacion de Inicio</model:documentation>
+    </model:startEvent>
+    <model:userTask id="_jU5vWA-dEeiTUdwghqUZMQ" name="Tarea1">
+      <model:documentation>Tarea First</model:documentation>
+    </model:userTask>
+    <model:boundaryEvent id="_uv9QMBAHEeiSkal6PJCcVA" name="Temporizador" attachedToRef="_jU5vWA-dEeiTUdwghqUZMQ" cancelActivity="false">
+      <model:documentation>TIEMPOOOOO</model:documentation>
+      <model:timerEventDefinition id="eventdef-Temporizador">
+        <model:timeCycle>432000000L</model:timeCycle>
+      </model:timerEventDefinition>
+    </model:boundaryEvent>
+    <model:parallelGateway id="_jU5vaA-dEeiTUdwghqUZMQ" name="¿Se acepta?">
+      <model:documentation>Gateway</model:documentation>
+    </model:parallelGateway>
+    <model:endEvent id="_jU5vbQ-dEeiTUdwghqUZMQ" name="Fin1">
+      <model:documentation>Operacion de Fin</model:documentation>
+    </model:endEvent>
+    <model:serviceTask id="_6bwa4BAFEeiSkal6PJCcVA" name="TareaRueda">
+      <model:documentation>Ruedaaaaa</model:documentation>
+    </model:serviceTask>
+    <model:scriptTask id="_9mDMoBAFEeiSkal6PJCcVA" name="TareaDoc">
+      <model:documentation>Documentooo</model:documentation>
+    </model:scriptTask>
+    <model:sequenceFlow id="_jU5vgg-dEeiTUdwghqUZMQ" name="" sourceRef="_jU5vUw-dEeiTUdwghqUZMQ" targetRef="_jU5vWA-dEeiTUdwghqUZMQ"/>
+    <model:sequenceFlow id="_jU5viA-dEeiTUdwghqUZMQ" name="No" sourceRef="_jU5vaA-dEeiTUdwghqUZMQ" targetRef="_jU5vbQ-dEeiTUdwghqUZMQ">
+      <model:documentation>No se acepto</model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_WxkSgBAJEeiSkal6PJCcVA" name="" sourceRef="_jU5vWA-dEeiTUdwghqUZMQ" targetRef="_jU5vaA-dEeiTUdwghqUZMQ"/>
+    <model:sequenceFlow id="_a2I7MBAJEeiSkal6PJCcVA" name="Si" sourceRef="_jU5vaA-dEeiTUdwghqUZMQ" targetRef="_6bwa4BAFEeiSkal6PJCcVA">
+      <model:documentation>Se acepto</model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_c9H10BAJEeiSkal6PJCcVA" name="" sourceRef="_6bwa4BAFEeiSkal6PJCcVA" targetRef="_9mDMoBAFEeiSkal6PJCcVA"/>
+  </model:process>
+  <di:BPMNDiagram name="Test">
+    <di:BPMNPlane id="plane__jU5vUA-dEeiTUdwghqUZMQ" bpmnElement="_jU5vUA-dEeiTUdwghqUZMQ">
+      <di:BPMNShape id="_jU5vpg-dEeiTUdwghqUZMQ" bpmnElement="_Y1HSEBAeEeiSkal6PJCcVA" isHorizontal="true">
+        <dc:Bounds height="294.0" width="1613.0" x="0.0" y="0.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_jU5vqQ-dEeiTUdwghqUZMQ" bpmnElement="_jU5vUg-dEeiTUdwghqUZMQ" isHorizontal="true">
+        <dc:Bounds height="294.0" width="1583.0" x="30.0" y="0.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_jU5vrw-dEeiTUdwghqUZMQ" bpmnElement="_jU5vUw-dEeiTUdwghqUZMQ">
+        <dc:Bounds height="30.0" width="30.0" x="90.0" y="68.0"/>
+        <di:BPMNLabel id="_Y1IgMRAeEeiSkal6PJCcVA" labelStyle="_Y1IgMBAeEeiSkal6PJCcVA">
+          <dc:Bounds height="15.0" width="35.0" x="88.0" y="103.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_jU5vrA-dEeiTUdwghqUZMQ" bpmnElement="_jU5vWA-dEeiTUdwghqUZMQ">
+        <dc:Bounds height="50.0" width="100.0" x="190.0" y="60.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_uv9QMRAHEeiSkal6PJCcVA" bpmnElement="_uv9QMBAHEeiSkal6PJCcVA">
+        <dc:Bounds height="30.0" width="30.0" x="210.0" y="95.0"/>
+        <di:BPMNLabel id="_Y1KVYBAeEeiSkal6PJCcVA" labelStyle="_Y1IgMBAeEeiSkal6PJCcVA">
+          <dc:Bounds height="15.0" width="74.0" x="188.0" y="130.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_jU5vsw-dEeiTUdwghqUZMQ" bpmnElement="_jU5vaA-dEeiTUdwghqUZMQ">
+        <dc:Bounds height="43.0" width="43.0" x="419.0" y="55.0"/>
+        <di:BPMNLabel id="_Y1KVYRAeEeiSkal6PJCcVA" labelStyle="_Y1IgMBAeEeiSkal6PJCcVA">
+          <dc:Bounds height="15.0" width="60.0" x="410.0" y="103.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_jU5vtw-dEeiTUdwghqUZMQ" bpmnElement="_jU5vbQ-dEeiTUdwghqUZMQ">
+        <dc:Bounds height="30.0" width="30.0" x="586.0" y="68.0"/>
+        <di:BPMNLabel id="_Y1K8cBAeEeiSkal6PJCcVA" labelStyle="_Y1IgMBAeEeiSkal6PJCcVA">
+          <dc:Bounds height="15.0" width="22.0" x="590.0" y="103.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_6d8zQBAFEeiSkal6PJCcVA" bpmnElement="_6bwa4BAFEeiSkal6PJCcVA">
+        <dc:Bounds height="59.0" width="118.0" x="567.0" y="179.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_9mFB0BAFEeiSkal6PJCcVA" bpmnElement="_9mDMoBAFEeiSkal6PJCcVA">
+        <dc:Bounds height="50.0" width="100.0" x="761.0" y="188.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_jU5vxg-dEeiTUdwghqUZMQ" bpmnElement="_jU5vgg-dEeiTUdwghqUZMQ">
+        <di_1:waypoint x="120.0" y="84.0"/>
+        <di_1:waypoint x="190.0" y="84.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_jU5v0g-dEeiTUdwghqUZMQ" bpmnElement="_jU5viA-dEeiTUdwghqUZMQ">
+        <di_1:waypoint x="462.0" y="79.0"/>
+        <di_1:waypoint x="586.0" y="79.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Wxk5kBAJEeiSkal6PJCcVA" bpmnElement="_WxkSgBAJEeiSkal6PJCcVA">
+        <di_1:waypoint x="290.0" y="70.0"/>
+        <di_1:waypoint x="419.0" y="70.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_a2JiQBAJEeiSkal6PJCcVA" bpmnElement="_a2I7MBAJEeiSkal6PJCcVA">
+        <di_1:waypoint x="462.0" y="91.0"/>
+        <di_1:waypoint x="530.0" y="91.0"/>
+        <di_1:waypoint x="530.0" y="138.0"/>
+        <di_1:waypoint x="585.0" y="138.0"/>
+        <di_1:waypoint x="585.0" y="179.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_c9Ic4BAJEeiSkal6PJCcVA" bpmnElement="_c9H10BAJEeiSkal6PJCcVA">
+        <di_1:waypoint x="685.0" y="210.0"/>
+        <di_1:waypoint x="761.0" y="210.0"/>
+        <di:BPMNLabel/>
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+    <di:BPMNLabelStyle id="_Y1IgMBAeEeiSkal6PJCcVA">
+      <dc:Font isBold="false" isItalic="false" isStrikeThrough="false" isUnderline="false" name="Segoe UI" size="9.0"/>
+    </di:BPMNLabelStyle>
+  </di:BPMNDiagram>
+</model:definitions>
